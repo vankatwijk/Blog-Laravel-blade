@@ -18,7 +18,7 @@
     <div id="fh5co-main-nav">
       <nav id="fh5co-nav" role="navigation">
         <ul>
-          <li class="@yield('homeSelect')">
+          <li class="@yield('homeSelect') {{Request::is('/')? 'fh5co-active' : ''}}">
             <a href="/">Home</a>
           </li>
           <li class="@yield('blogSelect')">
