@@ -14,7 +14,12 @@
 
     </div>
     <div class="col-md-2">
-        <a href="" class="btn btn-danger ">Delete</a>
+
+      <form method="post" action="{{ route('posts.destroy',$post->id) }}">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <input type="submit" class="btn btn-danger" value="Delete">
+      </form>
     </div>
     <div class="col-md-1">
         <a href="{{$post->id}}/edit" class="btn btn-info ">Edit</a>

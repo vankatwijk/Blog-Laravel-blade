@@ -123,6 +123,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+      //find the post and update it
+      $post = Post::find($id);
+      $post->delete();
+
+      return  redirect()->route('posts.index');
     }
 }
