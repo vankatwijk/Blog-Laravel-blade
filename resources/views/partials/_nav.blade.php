@@ -22,10 +22,10 @@
             <a href="/">Home</a>
           </li>
           <li class="@yield('blogSelect')">
-            <a href="blog">Blog</a>
+            <a href="/blog">Blog</a>
           </li>
           <li class="@yield('aboutSelect')">
-            <a href="about">About us</a>
+            <a href="/about">About us</a>
           </li>
         </ul>
         <a href="contact" class="fh5co-nav-call-to-action js-fh5co-nav-call-to-action @yield('contactSelect')">Let's Chat</a>

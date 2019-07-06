@@ -22,6 +22,14 @@
           </div>
         </div>
 
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Slug" class="sr-only">Slug</label>
+            <input placeholder="Slug" name="slug" id="slug" type="text" class="form-control input-lg" value="{{ $post->slug }}">
+          </div>
+        </div>
+
+
         <div class="col-md-12">
           <div class="form-group">
             <label for="body" class="sr-only">Body</label>
