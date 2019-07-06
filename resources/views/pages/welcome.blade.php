@@ -103,65 +103,23 @@
 			<div id="fh5co-work">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-							<a href="#" class="fh5co-work-item js-fh5co-work-item">
-								<img src="images/work_1.jpg" alt="Image" class="img-responsive">
-								<div class="fh5co-overlay-bg js-fh5co-overlay-bg"></div>
-								<div class="fh5co-overlay-text js-fh5co-overlay-text">
-									<h2>Work no. 1</h2>
-									<ul class="fh5co-categories">
-										<li>Web Design</li>
-										<li>Identity</li>
-										<li>Packaging</li>
-									</ul>
-								</div>
-							</a>
-						</div>
 
-						<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-							<a href="#" class="fh5co-work-item js-fh5co-work-item">
-								<img src="images/work_2.jpg" alt="Image" class="img-responsive">
-								<div class="fh5co-overlay-bg js-fh5co-overlay-bg"></div>
-								<div class="fh5co-overlay-text js-fh5co-overlay-text">
-									<h2>Work no. 2</h2>
-									<ul class="fh5co-categories">
-										<li>Web Design</li>
-										<li>Identity</li>
-										<li>Packaging</li>
-									</ul>
+						@foreach($posts as $post)
+								<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
+									<a href="" class="fh5co-work-item js-fh5co-work-item">
+										<img src="/images/work_1.jpg" alt="Image" class="img-responsive">
+										<div class="fh5co-overlay-bg js-fh5co-overlay-bg" style=""></div>
+										<div class="fh5co-overlay-text" style="opacity: 1;">
+											<h2>{{$post->title}}</h2>
+											<ul class="fh5co-categories">
+												<li>Web Design</li>
+												<li>Identity</li>
+												<li>Packaging</li>
+											</ul>
+										</div>
+									</a>
 								</div>
-							</a>
-						</div>
-
-						<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-							<a href="#" class="fh5co-work-item js-fh5co-work-item">
-								<img src="images/work_5.jpg" alt="Image" class="img-responsive">
-								<div class="fh5co-overlay-bg js-fh5co-overlay-bg"></div>
-								<div class="fh5co-overlay-text js-fh5co-overlay-text">
-									<h2>Work no. 5</h2>
-									<ul class="fh5co-categories">
-										<li>Web Design</li>
-										<li>Identity</li>
-										<li>Packaging</li>
-									</ul>
-								</div>
-							</a>
-						</div>
-
-						<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-							<a href="#" class="fh5co-work-item js-fh5co-work-item">
-								<img src="images/work_6.jpg" alt="Image" class="img-responsive">
-								<div class="fh5co-overlay-bg js-fh5co-overlay-bg"></div>
-								<div class="fh5co-overlay-text js-fh5co-overlay-text">
-									<h2>Work no. 6</h2>
-									<ul class="fh5co-categories">
-										<li>Web Design</li>
-										<li>Identity</li>
-										<li>Packaging</li>
-									</ul>
-								</div>
-							</a>
-						</div>
+			      @endforeach
 
 					</div>
 
@@ -169,35 +127,23 @@
 					<div class="row">
 						<div class="col-md-12 fh5co-more-works js-fh5co-more-works">
 							<div class="row">
-								<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-									<a href="#" class="fh5co-work-item js-fh5co-work-item">
-										<img src="images/work_7.jpg" alt="Image" class="img-responsive">
-										<div class="fh5co-overlay-bg js-fh5co-overlay-bg"></div>
-										<div class="fh5co-overlay-text js-fh5co-overlay-text">
-											<h2>Work no. 7</h2>
-											<ul class="fh5co-categories">
-												<li>Web Design</li>
-												<li>Identity</li>
-												<li>Packaging</li>
-											</ul>
-										</div>
-									</a>
-								</div>
-
-								<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
-									<a href="#" class="fh5co-work-item js-fh5co-work-item">
-										<img src="images/work_8.jpg" alt="Image" class="img-responsive">
-										<div class="fh5co-overlay-bg js-fh5co-overlay-bg"></div>
-										<div class="fh5co-overlay-text js-fh5co-overlay-text">
-											<h2>Work no. 8</h2>
-											<ul class="fh5co-categories">
-												<li>Web Design</li>
-												<li>Identity</li>
-												<li>Packaging</li>
-											</ul>
-										</div>
-									</a>
-								</div>
+									<!--here goes the hidden post-->
+									@foreach($hiddenPosts as $hiddenPost)
+											<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
+												<a href="" class="fh5co-work-item js-fh5co-work-item">
+													<img src="/images/work_1.jpg" alt="Image" class="img-responsive">
+													<div class="fh5co-overlay-bg js-fh5co-overlay-bg" style=""></div>
+													<div class="fh5co-overlay-text" style="opacity: 1;">
+														<h2>{{$hiddenPost->title}}</h2>
+														<ul class="fh5co-categories">
+															<li>Web Design</li>
+															<li>Identity</li>
+															<li>Packaging</li>
+														</ul>
+													</div>
+												</a>
+											</div>
+									@endforeach
 							</div>
 						</div>
 						<div class="col-md-12 text-center">

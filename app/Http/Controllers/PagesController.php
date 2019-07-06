@@ -1,10 +1,16 @@
 <?php
 namespace App\Http\Controllers;
+use App\Post;
 
 Class PagesController extends Controller{
 
   public function getIndex(){
-    return view('pages.welcome');
+
+    //display the 4 most recent post on the homepage
+    $post = POST::orderBy('created_at','desc')->limit(2)->get();
+    $hiddenPost = POST::orderBy('created_at','desc')->skip(2)->take(2)->get();
+
+    return view('pages.welcome')->withPosts($post)->withHiddenPosts($hiddenPost);
   }
 
   public function getAbout(){

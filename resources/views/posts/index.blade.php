@@ -10,7 +10,7 @@
 		<div class="row">
 
 
-				<a href="create" class="btn btn-primary fh5co-btn-icon" style="float:right;" ><i class="ti-pencil"></i> Create new post</a>
+				<a href="posts/create" class="btn btn-primary fh5co-btn-icon" style="float:right;" ><i class="ti-pencil"></i> Create new post</a>
 
 
 		</div>
@@ -49,5 +49,8 @@
 
 				</div>
 			</div>
+      <div style="text-align: center;">
+        {!! $posts->links(); !!}
+      <div>
 
 @stop

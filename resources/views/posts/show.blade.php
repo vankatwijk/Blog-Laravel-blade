@@ -8,7 +8,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-1">
-      <a href="/posts/" class="btn btn-dark">Go Back</a>
+      <a href="{{ route('posts.index') }}" class="btn btn-dark">Go Back</a>
     </div>
     <div class="col-md-8">
 
