@@ -21,4 +21,9 @@ Route::get('/blog', 'BlogController@getPosts');
 
 Route::get('/blog/{slug}', 'BlogController@getSingle')->name('blog.single')->where('slug','[\w\d\-\_]+');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('posts','PostController');

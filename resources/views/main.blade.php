@@ -62,7 +62,22 @@
 							<small>(c) 2015 <a href="index.html">Vanniks</a>. All Rights Reserved. <br>
 Designed by: <a href="http://hpvk.com/">hpvk.com</a> Images: <a href="http://plmd.me/" target="_blank">plmd.me</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a> </small>
 						</p>
+			        @if (Route::has('login'))
+			            <div>
+			                @auth
+			                    <a href="{{ url('/home') }}">Home</a>
+			                @else
+			                    <a href="{{ route('login') }}">Login</a>
+
+			                    @if (Route::has('register'))
+			                        <a href="{{ route('register') }}">Register</a>
+			                    @endif
+			                @endauth
+			            </div>
+			        @endif
+
 					</div>
+
 				</div>
 			</div>
 		</footer>
