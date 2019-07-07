@@ -3,6 +3,9 @@
 @section('title','Post Create')
 @section('postCreateSelect','fh5co-active')
 
+<script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
+
+
 @section('content')
 
 <!-- Form -->
@@ -35,6 +38,9 @@
             <textarea placeholder="Body" name="body" id="Body" class="form-control input-lg" rows="3"></textarea>
           </div>
         </div>
+        <div id="editor">
+
+        </div>
 
         <div class="col-md-6">
           <div class="form-group">
@@ -53,5 +59,11 @@
 
 </div>
 <!-- Form -->
-
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#Body' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @stop

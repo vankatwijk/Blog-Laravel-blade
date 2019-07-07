@@ -3,6 +3,9 @@
 @section('title','Post Create')
 @section('postCreateSelect','fh5co-active')
 
+<script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
+
+
 @section('content')
 
 <!-- Form -->
@@ -56,5 +59,12 @@
 
 </div>
 <!-- Form -->
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#Body' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 
 @stop

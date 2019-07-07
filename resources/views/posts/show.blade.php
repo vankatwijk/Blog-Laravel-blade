@@ -48,8 +48,7 @@
 		<h2 class="fh5co-uppercase-heading-sm text-center">Published on : {{ date_format($post->created_at, 'g:ia \o\n l jS F Y') }}</h2>
 		<div class="fh5co-spacer fh5co-spacer-xs"></div>
 
-		<img src="images/work_4.jpg" alt="Images" class="fh5co-align-left img-responsive">
-		<p>{{ $post->body }}</p>
+		<p>{!! $post->body !!}</p>
 	</div>
 </div>
 

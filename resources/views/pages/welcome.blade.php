@@ -4,6 +4,31 @@
 @section('homeSelect','fh5co-active')
 
 @section('content')
+			<style>
+
+			#fh5co-main-nav ul > li.fh5co-active a {
+			    color: #ffffff;
+			}
+
+			#fh5co-main-nav ul > li > a {
+			    color: #ffffff;
+			}
+			#billboard {
+			    background-image: url(https://images.unsplash.com/photo-1552404777-2db2c7943e09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80);
+			    background-repeat: no-repeat;
+			    position: absolute;
+			    top: 0px;
+			    left: 0px;
+			    right: 0px;
+			    height: 700px;
+			    background-attachment: fixed;
+			    background-position: center top;
+			    z-index: -2;
+			}
+			
+			</style>
+			<div id="billboard"></div>
+
 			<!-- Start Intro -->
 			<div id="fh5co-intro">
 				<div class="container">

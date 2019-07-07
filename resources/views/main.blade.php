@@ -102,9 +102,7 @@ Designed by: <a href="http://hpvk.com/">hpvk.com</a> Images: <a href="http://plm
 		<script src="/js/fastclick.js"></script>
 		<!-- Velocity -->
 		<script src="/js/velocity.min.js"></script>
-		<!-- Google Map -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-		<script src="/js/google_map.js"></script>
+
 		<!-- Main JS -->
 		<script src="/js/main.js"></script>
 
