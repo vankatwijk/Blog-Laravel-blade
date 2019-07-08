@@ -8,12 +8,20 @@
 <div class="container">
   <div id="fh5co-intro">
 				<div class="container">
-					<h1>{{ $post->title }}</h1>
-						<div class="row">
-							<div class="col-md-6 col-md-push-6 fh5co-intro-sub">
-								<p></p>
-							</div>
-						</div>
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
+              <img src="{{isset($post->image)?'/images/posts/'.$post->image:'/images/work_1.jpg'}}" alt="Image" class="img-responsive">
+            </div>
+						<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
+              <h1>{{ $post->title }}</h1>
+              <div class="row">
+                <div class="col-md-6 col-md-push-6 fh5co-intro-sub">
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
 				</div>
 			</div>
 </div>
