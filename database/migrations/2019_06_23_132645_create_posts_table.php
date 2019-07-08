@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->string('slug')->unique();
             $table->bigIncrements('user_id');
+            $table->string('image')->nullable;
             $table->timestamps();
         });
     }

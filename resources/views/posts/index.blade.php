@@ -28,7 +28,7 @@
       @foreach($posts as $post)
 						<div class="col-md-6 col-sm-6 col-xs-6 fh5co-work-wrap">
 							<a href="{{route('posts.show',$post->id)}}" class="fh5co-work-item js-fh5co-work-item">
-								<img src="/images/work_1.jpg" alt="Image" class="img-responsive">
+								<img src="{{isset($post->image)?'images/posts/'.$post->image:'/images/work_1.jpg'}}" alt="Image" class="img-responsive">
 								<div class="fh5co-overlay-bg js-fh5co-overlay-bg" style=""></div>
 								<div class="fh5co-overlay-text" style="opacity: 1;">
 									<h2>{{$post->title}}</h2>

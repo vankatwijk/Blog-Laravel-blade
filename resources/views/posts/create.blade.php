@@ -34,6 +34,13 @@
 
         <div class="col-md-12">
           <div class="form-group">
+            <label for="featured_image" class="sr-only">Featured image</label>
+            <input type="file" name="featured_image" id="featured_image">
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
             <label for="body" class="sr-only">Body</label>
             <textarea placeholder="Body" name="body" id="Body" class="form-control input-lg" rows="3"></textarea>
           </div>

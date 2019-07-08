@@ -32,6 +32,12 @@
           </div>
         </div>
 
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="featured_image" class="sr-only">Featured image</label>
+            <input type="file" name="featured_image" id="featured_image">
+          </div>
+        </div>
 
         <div class="col-md-12">
           <div class="form-group">

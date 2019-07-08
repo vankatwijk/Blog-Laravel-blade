@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use Auth;
 use Session;
+use Image;
+use Storage;
 
 class PostController extends Controller
 {
@@ -51,7 +53,8 @@ class PostController extends Controller
         $this->validate($request, array(
           'title' => 'required|max:255',
           'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
-          'body' => 'required'
+          'body' => 'required',
+          'featured_image' => 'sometimes|image'
         ));
 
         //store the information
@@ -60,6 +63,14 @@ class PostController extends Controller
         $post->slug = $request->slug;
         $post->body = $request->body;
         $post->user_id = Auth::id();
+
+        if($request->hasFile('featured_image')){
+          $image = $request->file('featured_image');
+          $filename = time().'.'.$image->getClientOriginalExtension();// intervention library
+          $location = public_path('images/posts/'.$filename);
+          Image::make($image)->resize(800, 400)->save($location);
+          $post->image = $filename;
+        }
 
         $post->save();
 
@@ -113,14 +124,16 @@ class PostController extends Controller
       if($request->input('slug') == $post->slug){
         $this->validate($request, array(
           'title' => 'required|max:255',
-          'body' => 'required'
+          'body' => 'required',
+          'featured_image' => 'sometimes|image'
         ));
 
       }else{
         $this->validate($request, array(
           'title' => 'required|max:255',
           'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
-          'body' => 'required'
+          'body' => 'required',
+          'featured_image' => 'sometimes|image'
         ));
       }
 
@@ -128,6 +141,18 @@ class PostController extends Controller
       $post->title = $request->title;
       $post->slug = $request->slug;
       $post->body = $request->body;
+
+      if($request->hasFile('featured_image')){
+        $image = $request->file('featured_image');
+        $filename = time().'.'.$image->getClientOriginalExtension();// intervention library
+        $location = public_path('images/posts/'.$filename);
+        Image::make($image)->resize(800, 400)->save($location);
+
+        $oldFileName = $post->image;
+        $post->image = $filename;
+
+        Storage::delete($oldFileName);
+      }
 
       $post->save();
 
@@ -148,6 +173,9 @@ class PostController extends Controller
     {
       //find the post and update it
       $post = Post::find($id);
+
+      $oldFileName = $post->image;
+      Storage::delete($oldFileName);
       $post->delete();
 
       return  redirect()->route('posts.index');
