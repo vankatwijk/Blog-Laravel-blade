@@ -16,7 +16,7 @@
       <div class="fh5co-spacer fh5co-spacer-xs"></div>
     </div>
     <div class="col-md-8 col-md-offset-2">
-      <form method="post" action="{{ route('posts.update',$post->id) }}">
+      <form method="post" action="{{ route('posts.update',$post->id) }}" enctype="multipart/form-data">
 
         <div class="col-md-6">
           <div class="form-group">
