@@ -4,7 +4,7 @@
   <div class="container">
     <!-- Logo -->
     <div id="fh5co-logo">
-      <a href="/">
+      <a href="/" style="border-bottom: 2px solid transparent">
         <img src="/images/logo.png" alt="Work Logo" height="80px">
       </a>
 
@@ -39,8 +39,8 @@
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" style="display:block;" href="{{ route('home') }}">Dashboard</a>
-                      <a class="dropdown-item" style="display:block;" href="{{ route('logout') }}"
+                      <a class="dropdown-item" style="display:block;padding:10px;" href="{{ route('home') }}">Posts</a>
+                      <a class="dropdown-item" style="display:block;padding:10px;" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
                           {{ __('Logout') }}

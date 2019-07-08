@@ -23,9 +23,10 @@
 			    height: 700px;
 			    background-attachment: fixed;
 			    background-position: center top;
+					background-size: cover;
 			    z-index: -2;
 			}
-			
+
 			</style>
 			<div id="billboard"></div>
 

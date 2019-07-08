@@ -24,6 +24,10 @@
 		<div class="fh5co-spacer fh5co-spacer-xs"></div>
 		<p>{!! $post->body !!}</p>
 	</div>
+  <div class="col-md-12">
+    <div class="fh5co-spacer fh5co-spacer-xs"></div>
+    <p>Writen by : {!! $post->user->name !!}</p>
+  </div>
 </div>
 
 <!-- Form -->

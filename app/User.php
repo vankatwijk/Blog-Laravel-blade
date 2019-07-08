@@ -36,4 +36,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //one to many relationship
+    //it will automatically look for Category_id in the post mysql_list_tables
+    //
+    public function posts(){
+      return $this->hasMany('App\Post');
+    }
 }
