@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Category;
 use Auth;
 use Session;
 use Image;
@@ -38,7 +39,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+
+        $categories = Category::all();
+        return view('posts.create')->withCategories($categories);
     }
 
     /**
@@ -49,6 +52,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        //if slug is not set, set it to title
+        $request->merge(['slug' => str_replace(' ', '_', strtolower($request->title))]);
+
         //validate the data
         $this->validate($request, array(
           'title' => 'required|max:255',
@@ -62,6 +68,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug = $request->slug;
         $post->body = $request->body;
+        $post->category_id = $request->category_id;
         $post->user_id = Auth::id();
 
         if($request->hasFile('featured_image')){
@@ -104,7 +111,8 @@ class PostController extends Controller
     {
 
       $post = Post::find($id);
-      return view('posts.edit')->withPost($post);
+      $categories = Category::all();
+      return view('posts.edit')->withPost($post)->withCategories($categories);
 
     }
 
@@ -141,6 +149,7 @@ class PostController extends Controller
       $post->title = $request->title;
       $post->slug = $request->slug;
       $post->body = $request->body;
+      $post->category_id = $request->category_id;
 
       if($request->hasFile('featured_image')){
         $image = $request->file('featured_image');

@@ -35,6 +35,7 @@
   <div class="col-md-12">
     <div class="fh5co-spacer fh5co-spacer-xs"></div>
     <p>Writen by : {!! $post->user->name !!}</p>
+    <p>Category : {{(isset($post->category->name)?$post->category->name:'Unknown')}}</p>
   </div>
 </div>
 

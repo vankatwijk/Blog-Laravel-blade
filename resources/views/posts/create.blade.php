@@ -15,7 +15,7 @@
       <h2 class="fh5co-uppercase-heading-sm text-center">Create new post</h2>
       <div class="fh5co-spacer fh5co-spacer-xs"></div>
     </div>
-    <div class="col-md-8 col-md-offset-2">
+    <div class="">
       <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
 
         <div class="col-md-6">
@@ -28,14 +28,25 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="Slug" class="sr-only">Slug</label>
-            <input placeholder="Slug" name="slug" id="slug" type="text" class="form-control input-lg">
+            <input placeholder="Pretty URL, Default is title" name="slug" id="slug" type="text" class="form-control input-lg">
           </div>
         </div>
 
         <div class="col-md-12">
           <div class="form-group">
             <label for="featured_image" class="sr-only">Featured image</label>
-            <input type="file" name="featured_image" id="featured_image">
+            <input type="file" name="featured_image" id="featured_image" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="categories" class="sr-only">Categories</label>
+            <select class="form-control" name="category_id">
+              @foreach($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+              @endforeach
+            </select>
           </div>
         </div>
 

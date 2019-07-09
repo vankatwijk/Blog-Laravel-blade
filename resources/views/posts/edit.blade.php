@@ -41,6 +41,17 @@
 
         <div class="col-md-12">
           <div class="form-group">
+            <label for="categories" class="sr-only">Categories</label>
+            <select class="form-control" name="category_id">
+              @foreach($categories as $category)
+                <option value="{{$category->id}}" {{($post->category_id == $category->id ? 'selected' : '')}}>{{$category->name}}</option>
+              @endforeach
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
             <label for="body" class="sr-only">Body</label>
             <textarea placeholder="Body" name="body" id="Body" class="form-control input-lg" rows="3">{{ $post->body }}</textarea>
           </div>
