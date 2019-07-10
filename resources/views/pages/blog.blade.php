@@ -36,6 +36,11 @@
     <div class="fh5co-spacer fh5co-spacer-xs"></div>
     <p>Writen by : {!! $post->user->name !!}</p>
     <p>Category : {{(isset($post->category->name)?$post->category->name:'Unknown')}}</p>
+    <p>
+      @foreach($post->tags as $tag)
+        <span class="badge badge-secondary">{{$tag->name.' '}}</span>
+      @endforeach
+    </p>
   </div>
 </div>
 

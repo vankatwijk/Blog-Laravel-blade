@@ -87,7 +87,6 @@ Designed by: <a href="http://hpvk.com/">hpvk.com</a> Images: <a href="http://plm
 
 
 		<!-- jQuery -->
-		<script src="/js/jquery-1.10.2.min.js"></script>
 		<!-- jQuery Easing -->
 		<script src="/js/jquery.easing.1.3.js"></script>
 		<!-- Bootstrap -->

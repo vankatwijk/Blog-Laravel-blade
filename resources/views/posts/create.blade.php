@@ -3,10 +3,13 @@
 @section('title','Post Create')
 @section('postCreateSelect','fh5co-active')
 
-<script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
-
 
 @section('content')
+
+<script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
 
 <!-- Form -->
 <div class="container">
@@ -50,6 +53,18 @@
           </div>
         </div>
 
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="tags" class="sr-only">Tags</label>
+            <select class="js-basic-multiple form-control" name="tags[]" multiple="multiple"  data-placeholder="Select a tag">
+              @foreach($tags as $tag)
+                <option value="{{$tag->id}}">{{$tag->name}}</option>
+              @endforeach
+            </select>
+          </div>
+        </div>
+
         <div class="col-md-12">
           <div class="form-group">
             <label for="body" class="sr-only">Body</label>
@@ -83,5 +98,8 @@
         .catch( error => {
             console.error( error );
         } );
+
+        $('.js-basic-multiple').select2();
+
 </script>
 @stop

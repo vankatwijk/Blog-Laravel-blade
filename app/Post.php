@@ -19,4 +19,8 @@ class Post extends Model
       //this is a one to many relationship from post to categories
       return $this->belongsTo('App\User');
     }
+
+    public function tags(){
+      return $this->belongsToMany('App\Tag');
+    }
 }

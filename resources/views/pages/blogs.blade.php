@@ -5,12 +5,6 @@
 
 @section('content')
 
-<style>
-	#postbox{
-	    height: 200px;
-	    overflow: hidden;
-	}
-</style>
 
 <div id="fh5co-work">
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use App\Tag;
 use Auth;
 use Session;
 use Image;
@@ -41,7 +42,8 @@ class PostController extends Controller
     {
 
         $categories = Category::all();
-        return view('posts.create')->withCategories($categories);
+        $tags = Tag::all();
+        return view('posts.create')->withCategories($categories)->withTags($tags);
     }
 
     /**
@@ -81,6 +83,13 @@ class PostController extends Controller
 
         $post->save();
 
+
+        if(isset($request->tags)){
+          $post->tags()->sync($request->tags,false);
+        }else{
+          $post->tags()->sync(array());
+        }
+
         Session::flash('Success','The post was saved successfully !');
         //Session::put()
 
@@ -112,7 +121,9 @@ class PostController extends Controller
 
       $post = Post::find($id);
       $categories = Category::all();
-      return view('posts.edit')->withPost($post)->withCategories($categories);
+      $tags = Tag::all();
+
+      return view('posts.edit')->withPost($post)->withCategories($categories)->withTags($tags);
 
     }
 
@@ -165,6 +176,12 @@ class PostController extends Controller
 
       $post->save();
 
+      if(isset($request->tags)){
+        $post->tags()->sync($request->tags,true);
+      }else{
+        $post->tags()->sync(array());
+      }
+
       Session::flash('Success','The post was updated successfully !');
       //Session::put()
 
@@ -182,6 +199,8 @@ class PostController extends Controller
     {
       //find the post and update it
       $post = Post::find($id);
+
+      $post->tags()->detach();
 
       $oldFileName = $post->image;
       Storage::delete($oldFileName);

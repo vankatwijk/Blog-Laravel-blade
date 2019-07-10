@@ -41,6 +41,8 @@
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" style="display:block;padding:10px;" href="{{ route('home') }}">Posts</a>
                       <a class="dropdown-item" style="display:block;padding:10px;" href="{{ route('categories.index') }}">Categories</a>
+                      <a class="dropdown-item" style="display:block;padding:10px;" href="{{ route('tags.index') }}">tags</a>
+
                       <a class="dropdown-item" style="display:block;padding:10px;" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">

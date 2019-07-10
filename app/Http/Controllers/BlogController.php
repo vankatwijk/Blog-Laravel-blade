@@ -10,7 +10,7 @@ class BlogController extends Controller
     public function getPosts(){
       //get all post
       //$posts = Post::all();
-      $posts = Post::orderBy('id','desc')->paginate(5);
+      $posts = Post::orderBy('id','desc')->paginate(8);
 
       return view('pages.blogs')->withPosts($posts);
     }
